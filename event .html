@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Events</title>
+
+
+
+    <style>
+
+   @import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background-color:  rgba(0, 29, 35, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+}
+
+.navbar div{
+  font-size: 40px;
+  font-weight: 700;
+  color: white;
+}
+
+.navbar div span{
+  color: #FF6F0F ;
+}
+
+nav ul  {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+
+
+nav ul  li{
+  list-style-type: none;
+
+}
+
+nav ul  li a{
+  text-decoration: none;
+  color: white;
+  font-size: 16.5px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+nav ul  li a:hover{
+
+  color: gray;
+}
+.nav-btn{
+  color:  #FF6F0F;
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color: transparent ;
+  border: 1px solid #FF6F0F;
+  border-radius: 5px;
+  transition: 0.4s ease;
+}
+
+.nav-btn:hover{
+  background-color: #FF6F0F;
+  color: white;
+}
+
+/* moblie menue style */
+
+/* hide the humbeger icon  */
+.menu-toggle{
+  display: none;
+  font-size: 26px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+/* responsicve for mobile */
+@media (max-width: 1046px){
+  .navbar{
+  
+    justify-content: space-between;
+    padding: 15px 20px;
+    
+  
+    
+  }
+ 
+
+  nav ul{
+ flex-direction: column;
+ width: 100%;
+ gap: 14px;
+  background-color: #001D23;
+  margin-top: 15px;
+  padding: 15px;
+   border-top: 1px solid #FF6F0F;
+   display: none;
+
+  }
+
+    /* When .open class is added by JS → show menu */
+  nav.open ul {
+    display: flex;
+  }
+
+   .menu-toggle {
+    display: block;
+    background-color: rgba(0,0,0,0,4);
+  }
+
+  /* .nav-btn{
+    display: none;
+  } */
+
+    /* Make links full width */
+  nav ul li a {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+  /* Donate button full width too */
+  .nav-btn {
+display: none;
+  }
+
+
+  
+}
+
+@media (max-width: 550px){
+  .navbar div{
+    font-size: 25px;
+  }
+}
+
+/* hero section */
+
+
+.event-hero{
+  background:linear-gradient(rgba(0, 29, 35, 0.8), rgba(0, 29, 35, 0.7)),
+    url(img/carousel-1.jpg);
+    background-size: cover;
+    background-position: center; 
+    color: white;
+    padding: 130px 20px;
+    text-align: center;
+}
+
+.event-hero h1{
+    font-size: 55px;
+}
+
+.event-hero div ol{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    list-style-type: none;
+    margin-top: 20px;
+
+}
+
+.event-hero div a{
+    color: white;
+    text-decoration: none;
+}
+
+
+.event-hero div span{
+    color: gray;
+}
+
+/* event\ p */
+
+.main-p{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 55px 66px;
+    flex-wrap: wrap;
+    
+}
+
+.frist h3 {
+  font-weight: bold;
+  font-size: 20px;  
+}
+.frist p{
+    margin-top: 3px;
+    color: gray;
+    font-size: 15px;
+}
+
+.second p{
+    color: gray;
+    font-size: 15px;
+}
+
+@media (max-width: 700px) {
+    .main-p{
+        display: flex;
+        flex-direction: column;
+    } 
+    
+    .frist{
+        margin-bottom: 30px;
+        text-align: center;
+    }
+}
+
+
+/* CARDS */
+  
+
+.mainn-card{
+    display: flex;
+    flex-direction: row;
+    
+    gap: 15px;
+   
+}
+
+.card{
+
+}
+
+
+
+    </style>
+</head>
+<body>
+    
+
+    <!-- navbar section start -->
+
+<header class="navbar">
+
+    <div><span>KURA</span> HOUSE </div>
+
+      <nav id="nav-menu">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Event</a></li>
+            <li><a href="#">Team</a></li>
+             <li><a href="#">Projects</a></li>
+              <li><a href="#">Contact</a></li> 
+
+        <a href="#" class="nav-btn"> Donate Now</a>
+        </ul>
+
+      </nav>
+  
+      <button class="menu-toggle" id="menu-toggle">
+    
+       <i class="fa-solid fa-bars"></i>
+      </button>
+   
+</header>
+
+   <!-- hero setion -->
+
+<section class="event-hero">
+ 
+    <h1> Events</h1>
+   <div>
+    <ol>
+    <li><a href="#"> Home</a></li> <span>/</span>
+    <li><a href="#"> Pages</a></li><span>/</span>
+    <li><a href="#" style="color: #FF6F0F;"> Events</a></li>
+
+    </ol>
+   </div>
+
+
+</section>
+
+
+<!-- events sections -->
+
+
+<section>
+    <div class="main-p">
+
+        <div class="frist">
+      <h3>Past Events</h3>
+      <p>Highlights from our community programs — photos and summaries from events we've already held.</p>
+        </div>
+
+        <div class="second">
+        <p>Showing recent events</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- cards section -->
+  <section>
+
+    <div class="mainn-card"> 
+
+
+        <div class="crad">
+            <div class="card-img">
+             <img src="">
+            </div>
+
+            <div class="card-content">
+
+             <div class="meta">
+            <span>Education</span>
+            <span>Aug 20, 2025 • Gisozi</span>
+             </div>
+
+             <h3>Nutrition & Mothercare Workshop</h3>
+             <p>Practical, hands-on training for mothers about child nutrition, hygiene and home kitchen...</p>
+
+             <div class=" card-footer">
+            <a href="#"> Read More </a>
+
+             </div>
+            </div>
+        </div>
+
+
+        
+        <div class="card">
+            <div class="card-img">
+             <img src="">
+            </div>
+
+            <div class="card-content">
+
+             <div class="meta">
+            <span>Education</span>
+            <span>Aug 20, 2025 • Gisozi</span>
+             </div>
+
+             <h3>Nutrition & Mothercare Workshop</h3>
+             <p>Practical, hands-on training for mothers about child nutrition, hygiene and home kitchen...</p>
+
+             <div class=" card-footer">
+            <a href="#"> Read More </a>
+
+             </div>
+            </div>
+        </div>
+
+        
+        <div class="card">
+            <div class="card-img">
+             <img src="">
+            </div>
+
+            <div class="card-content">
+
+             <div class="meta">
+            <span>Education</span>
+            <span>Aug 20, 2025 • Gisozi</span>
+             </div>
+
+             <h3>Nutrition & Mothercare Workshop</h3>
+             <p>Practical, hands-on training for mothers about child nutrition, hygiene and home kitchen...</p>
+
+             <div class=" card-footer">
+            <a href="#"> Read More </a>
+
+             </div>
+            </div>
+        </div>
+       
+    </div>
+  </section>
+
+
+<!-- JS to toggle menu -->
+<script>
+  const toggleBtn = document.getElementById("menu-toggle");
+  const navMenu = document.getElementById("nav-menu");
+
+  toggleBtn.addEventListener("click", () => {
+    navMenu.classList.toggle('open');
+  });
+</script>
+
+</body>
+</html>
